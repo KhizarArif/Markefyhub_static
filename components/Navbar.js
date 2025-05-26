@@ -251,8 +251,16 @@ export default function Navbar() {
               <button
                 className="block text-black hover:text-[#2C35A5] w-full text-left"
                 onClick={() => setMobileServicesOpen(!isMobileServicesOpen)}
+                aria-expanded={isMobileServicesOpen}
               >
                 Services
+                <span
+                  className={`ml-1 transform transition-transform duration-200 ${
+                    isMobileServicesOpen ? "rotate-180" : ""
+                  }`}
+                >
+                  ▼
+                </span>
               </button>
 
               {isMobileServicesOpen && (
