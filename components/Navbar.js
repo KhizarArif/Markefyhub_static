@@ -256,7 +256,8 @@ export default function Navbar() {
               </button>
 
               {isMobileServicesOpen && (
-                <div className="ml-4 mt-2 space-y-2 text-sm">
+                // <div className="ml-4 mt-2 space-y-2 text-sm">
+                <div className="ml-4 mt-2 space-y-2 text-sm max-h-[200px] overflow-y-auto pr-2">
                   {/* Development */}
                   <div>
                     <p className="font-semibold">🛠️ Development</p>
