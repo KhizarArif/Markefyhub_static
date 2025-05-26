@@ -50,6 +50,7 @@
 //         },
 //     ];
 
+import Image from "next/image";
 import React from "react";
 
 const ServiceGrid = ({ features = [] }) => {
@@ -62,10 +63,12 @@ const ServiceGrid = ({ features = [] }) => {
                         className={`p-6 rounded-xl h-[45vh] shadow-md ${item.bg} transition duration-300`}
                     >
                         <div className="w-30 h-30 mb-4">
-                            <img
+                            <Image
                                 src={item.icon}
                                 alt={item.title}
-                                className={`w-full h-full object-contain ${
+                                width={100}
+                                height={100}
+                                className={` object-contain ${
                                     item.bg === "bg-[#2C35A5]" ? "invert brightness-0" : ""
                                 }`}
                             />

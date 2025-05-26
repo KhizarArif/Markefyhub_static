@@ -6,9 +6,10 @@ export default function Footer() {
         {/* Column 1: Company Info */}
         <div>
           <h4 className="text-xl font-semibold mb-4">MarkeyfyHub</h4>
-          <p className="mb-2 text-gray-400">1942 Broadway St. STE 314C Boulder, CO, 80302, USA</p>
+          <p className="mb-2 text-gray-400">2nd floor house no 550 steet 11 sector C bahria town phase 8 Rawalpindi</p>
           <p className="mb-2 text-gray-400">Mon-Sat: 07:00pm - 4:00am | Sun: Closed</p>
           <p className="mb-2 text-gray-400">Phone: +1 720 604 9031</p>
+          <p className="mb-2 text-gray-400">WhatsApp 03709022870</p>
         </div>
 
         {/* Column 2: Services */}
