@@ -2,11 +2,23 @@
 
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isMobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [openCategories, setOpenCategories] = useState({});
+
+  const toggleCategory = (category) => {
+    setOpenCategories((prev) => ({
+      ...prev,
+      [category]: !prev[category]
+    }));
+  };
+
+  const categoryBoxStyle =
+  'bg-white shadow-md border border-gray-200 rounded-lg p-3 w-full hover:bg-gray-100 transition duration-300 ease-in-out';
 
   return (
     <nav className="relative flex w-full justify-between items-center py-4 px-8 shadow-md bg-white z-50">
@@ -227,7 +239,7 @@ export default function Navbar() {
       {/* Mobile Sidebar */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 z-50 md:hidden">
-          <div className="bg-white w-[250px] h-full p-6 space-y-4 relative">
+          <div className="bg-white w-[300px] h-full p-6 space-y-4 relative overflow-y-auto">
             <button
               className="absolute top-4 right-4 text-xl"
               onClick={() => setMobileMenuOpen(false)}
@@ -251,11 +263,10 @@ export default function Navbar() {
               <button
                 className="block text-black hover:text-[#2C35A5] w-full text-left"
                 onClick={() => setMobileServicesOpen(!isMobileServicesOpen)}
-                aria-expanded={isMobileServicesOpen}
               >
                 Services
                 <span
-                  className={`ml-1 transform transition-transform duration-200 ${
+                  className={`ml-2 inline-block transition-transform ${
                     isMobileServicesOpen ? "rotate-180" : ""
                   }`}
                 >
@@ -264,152 +275,186 @@ export default function Navbar() {
               </button>
 
               {isMobileServicesOpen && (
-                // <div className="ml-4 mt-2 space-y-2 text-sm">
-                <div className="ml-4 mt-2 space-y-2 text-sm max-h-[200px] overflow-y-auto pr-2">
-                  {/* Development */}
-                  <div>
-                    <p className="font-semibold">🛠️ Development</p>
-                    <ul className="ml-2 text-gray-700">
-                      <li>
-                        <a href="/services/PHP">PHP & Frameworks</a>
-                      </li>
-                      <li>
-                        <a href="/services/cross-app">Cross-App Development</a>
-                      </li>
-                      <li>
-                        <a href="/services/dotnet">.NET & Frameworks</a>
-                      </li>
-                      <li>
-                        <a href="/services/cms">CMS Development</a>
-                      </li>
-                      <li>
-                        <a href="/services/frontend">Frontend Development</a>
-                      </li>
-                      <li>
-                        <a href="/services/database">Database Management</a>
-                      </li>
-                      <li>
-                        <a href="/services/python-django">Python & Django</a>
-                      </li>
-                      <li>
-                        <a href="/services/mobile-app">
-                          Mobile App Development
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/blockchain">
-                          Blockchain Development
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/cloud">Cloud Services</a>
-                      </li>
-                      <li>
-                        <a href="/services/devops">DevOps Services</a>
-                      </li>
-                      <li>
-                        <a href="/services/api">API Development</a>
-                      </li>
-                      <li>
-                        <a href="/services/ecommerce">E-commerce Solutions</a>
-                      </li>
-                    </ul>
+                <div className="ml-4 mt-2 space-y-2 text-sm max-h-[500px] overflow-y-auto pr-2">
+                  {/* Category Item */}
+                  <div className={categoryBoxStyle}>
+                    <button
+                      className="flex items-center justify-between font-semibold w-full text-left"
+                      onClick={() => toggleCategory("development")}
+                    >
+                      <span> 🛠️ Development </span> 
+                      {openCategories['development'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    </button>
+                    {openCategories["development"] && (
+                      <ul className="ml-2 text-gray-700">
+                        <li>
+                          <a href="/services/PHP">PHP & Frameworks</a>
+                        </li>
+                        <li>
+                          <a href="/services/cross-app">
+                            Cross-App Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/dotnet">.NET & Frameworks</a>
+                        </li>
+                        <li>
+                          <a href="/services/cms">CMS Development</a>
+                        </li>
+                        <li>
+                          <a href="/services/frontend">Frontend Development</a>
+                        </li>
+                        <li>
+                          <a href="/services/database">Database Management</a>
+                        </li>
+                        <li>
+                          <a href="/services/python-django">Python & Django</a>
+                        </li>
+                        <li>
+                          <a href="/services/mobile-app">
+                            Mobile App Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/blockchain">
+                            Blockchain Development
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/cloud">Cloud Services</a>
+                        </li>
+                        <li>
+                          <a href="/services/devops">DevOps Services</a>
+                        </li>
+                        <li>
+                          <a href="/services/api">API Development</a>
+                        </li>
+                        <li>
+                          <a href="/services/ecommerce">E-commerce Solutions</a>
+                        </li>
+                      </ul>
+                    )}
                   </div>
 
-                  {/* Marketing */}
-                  <div>
-                    <p className="font-semibold">
-                      📈 Marketing & Growth Services
-                    </p>
-                    <ul className="ml-2 text-gray-700">
-                      <li>
-                        <a href="/services/seo">SEO Expert</a>
-                      </li>
-                      <li>
-                        <a href="/services/social-media">
-                          Social Media Management
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/linkedin">
-                          LinkedIn Account Handling
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/email-marketing">Email Marketing</a>
-                      </li>
-                      <li>
-                        <a href="/services/youtube">
-                          YouTube Channel Management
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/content">Content Marketing</a>
-                      </li>
-                      <li>
-                        <a href="/services/ppc">PPC Advertising</a>
-                      </li>
-                      <li>
-                        <a href="/services/influencer">Influencer Marketing</a>
-                      </li>
-                      <li>
-                        <a href="/services/analytics">Analytics & Reporting</a>
-                      </li>
-                    </ul>
+                  <div className={categoryBoxStyle}>
+                    <button
+                      className="font-semibold w-full text-left"
+                      onClick={() => toggleCategory("marketing")}
+                    >
+                      <span>📈 Marketing & Growth Services</span>
+                      {openCategories['marketing'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    </button>
+                    {openCategories["marketing"] && (
+                      <ul className="ml-2 text-gray-700">
+                        <li>
+                          <a href="/services/seo">SEO Expert</a>
+                        </li>
+                        <li>
+                          <a href="/services/social-media">
+                            Social Media Management
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/linkedin">
+                            LinkedIn Account Handling
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/email-marketing">
+                            Email Marketing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/youtube">
+                            YouTube Channel Management
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/content">Content Marketing</a>
+                        </li>
+                        <li>
+                          <a href="/services/ppc">PPC Advertising</a>
+                        </li>
+                        <li>
+                          <a href="/services/influencer">
+                            Influencer Marketing
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/analytics">
+                            Analytics & Reporting
+                          </a>
+                        </li>
+                      </ul>
+                    )}
                   </div>
 
-                  {/* Other Services */}
-                  <div>
-                    <p className="font-semibold">🧩 Other Services</p>
-                    <ul className="ml-2 text-gray-700">
-                      <li>
-                        <a href="/services/qa">QA Expert</a>
-                      </li>
-                      <li>
-                        <a href="/services/video-editing">Video Editing</a>
-                      </li>
-                      <li>
-                        <a href="/services/pwa">Progressive Web App</a>
-                      </li>
-                      <li>
-                        <a href="/services/chatbot">Chatbot Development</a>
-                      </li>
-                      <li>
-                        <a href="/services/crm-erp">Custom CRM/ERP Solutions</a>
-                      </li>
-                      <li>
-                        <a href="/services/cybersecurity">
-                          Cybersecurity Services
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/data-migration">
-                          Data Migration & Integration
-                        </a>
-                      </li>
-                    </ul>
+                  <div className={categoryBoxStyle}>
+                    <button
+                      className="font-semibold w-full text-left"
+                      onClick={() => toggleCategory("other")}
+                    >
+                      <span> 🧩 Other Services </span>
+                      {openCategories['other'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    </button>
+                    {openCategories["other"] && (
+                      <ul className="ml-2 text-gray-700">
+                        <li>
+                          <a href="/services/qa">QA Expert</a>
+                        </li>
+                        <li>
+                          <a href="/services/video-editing">Video Editing</a>
+                        </li>
+                        <li>
+                          <a href="/services/pwa">Progressive Web App</a>
+                        </li>
+                        <li>
+                          <a href="/services/chatbot">Chatbot Development</a>
+                        </li>
+                        <li>
+                          <a href="/services/crm-erp">
+                            Custom CRM/ERP Solutions
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/cybersecurity">
+                            Cybersecurity Services
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/data-migration">
+                            Data Migration & Integration
+                          </a>
+                        </li>
+                      </ul>
+                    )}
                   </div>
 
-                  {/* Design */}
-                  <div>
-                    <p className="font-semibold">
-                      🎨 Design & Creative Services
-                    </p>
-                    <ul className="ml-2 text-gray-700">
-                      <li>
-                        <a href="/services/ui-ux">UI/UX Design</a>
-                      </li>
-                      <li>
-                        <a href="/services/branding">
-                          Branding and Graphic Design
-                        </a>
-                      </li>
-                      <li>
-                        <a href="/services/animation">
-                          Animation & Motion Graphics
-                        </a>
-                      </li>
-                    </ul>
+                  <div className={categoryBoxStyle}>
+                    <button
+                      className="font-semibold w-full text-left"
+                      onClick={() => toggleCategory("design")}
+                    >
+                      <span>🎨 Design & Creative Services</span>
+                      {openCategories['design'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                    </button>
+                    {openCategories["design"] && (
+                      <ul className="ml-2 text-gray-700">
+                        <li>
+                          <a href="/services/ui-ux">UI/UX Design</a>
+                        </li>
+                        <li>
+                          <a href="/services/branding">
+                            Branding and Graphic Design
+                          </a>
+                        </li>
+                        <li>
+                          <a href="/services/animation">
+                            Animation & Motion Graphics
+                          </a>
+                        </li>
+                      </ul>
+                    )}
                   </div>
                 </div>
               )}
