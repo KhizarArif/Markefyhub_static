@@ -1,8 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from "lucide-react";
+import { menuItems } from "@/dummyData/menu";
+import Link from "next/link";
 
 export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
@@ -18,7 +20,7 @@ export default function Navbar() {
   };
 
   const categoryBoxStyle =
-  'bg-white shadow-md border border-gray-200 rounded-lg p-3 w-full hover:bg-gray-100 transition duration-300 ease-in-out';
+    "bg-white shadow-md border border-gray-200 rounded-lg p-3 w-full hover:bg-gray-100 transition duration-300 ease-in-out";
 
   return (
     <nav className="relative flex w-full justify-between items-center py-4 px-8 shadow-md bg-white z-50">
@@ -63,165 +65,52 @@ export default function Navbar() {
           </a>
           {showServices && (
             <div className="absolute top-full left-0 w-[800px] bg-white shadow-lg rounded-md p-6 grid grid-cols-4 gap-6 z-50 cursor-pointer">
-              {/* Column 1: Development */}
-              <div>
-                <h3 className="font-semibold mb-2">🛠️ Development</h3>
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>
-                    <a href="/services/PHP">PHP & Frameworks</a>
-                  </li>
-                  <li>
-                    <a href="/services/cross-app">Cross-App Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/dotnet">.NET & Frameworks</a>
-                  </li>
-                  <li>
-                    <a href="/services/cms">CMS Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/frontend">Frontend Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/database">Database Management</a>
-                  </li>
-                  <li>
-                    <a href="/services/python-django">Python & Django</a>
-                  </li>
-                  <li>
-                    <a href="/services/mobile-app">Mobile App Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/blockchain">Blockchain Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/cloud">Cloud Services</a>
-                  </li>
-                  <li>
-                    <a href="/services/devops">DevOps Services</a>
-                  </li>
-                  <li>
-                    <a href="/services/api">API Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/ecommerce">E-commerce Solutions</a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 2: Marketing */}
-              <div>
-                <h3 className="font-semibold mb-2">
-                  📈 Marketing & Growth Services
-                </h3>
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>
-                    <a href="/services/seo">SEO Expert</a>
-                  </li>
-                  <li>
-                    <a href="/services/social-media">Social Media Management</a>
-                  </li>
-                  <li>
-                    <a href="/services/linkedin">LinkedIn Account Handling</a>
-                  </li>
-                  <li>
-                    <a href="/services/email-marketing">Email Marketing</a>
-                  </li>
-                  <li>
-                    <a href="/services/youtube">YouTube Channel Management</a>
-                  </li>
-                  <li>
-                    <a href="/services/content">Content Marketing</a>
-                  </li>
-                  <li>
-                    <a href="/services/ppc">PPC Advertising</a>
-                  </li>
-                  <li>
-                    <a href="/services/influencer">Influencer Marketing</a>
-                  </li>
-                  <li>
-                    <a href="/services/analytics">Analytics & Reporting</a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 3: Other Services */}
-              <div>
-                <h3 className="font-semibold mb-2">🧩 Other Services</h3>
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>
-                    <a href="/services/qa">QA Expert</a>
-                  </li>
-                  <li>
-                    <a href="/services/video-editing">Video Editing</a>
-                  </li>
-                  <li>
-                    <a href="/services/pwa">Progressive Web App</a>
-                  </li>
-                  <li>
-                    <a href="/services/chatbot">Chatbot Development</a>
-                  </li>
-                  <li>
-                    <a href="/services/crm-erp">Custom CRM/ERP Solutions</a>
-                  </li>
-                  <li>
-                    <a href="/services/cybersecurity">Cybersecurity Services</a>
-                  </li>
-                  <li>
-                    <a href="/services/data-migration">
-                      Data Migration & Integration
-                    </a>
-                  </li>
-                </ul>
-              </div>
-
-              {/* Column 4: Design */}
-              <div>
-                <h3 className="font-semibold mb-2">
-                  🎨 Design & Creative Services
-                </h3>
-                <ul className="space-y-1 text-sm text-gray-700">
-                  <li>
-                    <a href="/services/ui-ux">UI/UX Design</a>
-                  </li>
-                  <li>
-                    <a href="/services/branding">Branding and Graphic Design</a>
-                  </li>
-                  <li>
-                    <a href="/services/animation">
-                      Animation & Motion Graphics
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              {menuItems?.map((item, index) => (
+                <div key={index}>
+                  <h3 className="font-semibold mb-2"> {item?.title} </h3>
+                  <ul className="space-y-1 text-sm text-gray-700">
+                    {item?.subMenu?.map((subItem, subIndex) => (
+                      <li key={subIndex}>
+                        <Link
+                          href={subItem?.link}
+                          className="flex items-center gap-2"
+                        >
+                          {subItem?.icon}
+                          {subItem?.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           )}
         </div>
 
-        <a
+        <Link
           href="/blog"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Blogs
-        </a>
-        <a
+        </Link>
+        <Link
           href="/portfolio"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Results
-        </a>
-        <a
+        </Link>
+        <Link
           href="/career"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Career
-        </a>
-        <a
+        </Link>
+        <Link
           href="/contact"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Contact Us
-        </a>
+        </Link>
       </div>
 
       {/* Contact Info */}
@@ -247,12 +136,15 @@ export default function Navbar() {
               <FaTimes />
             </button>
 
-            <a href="/" className="block text-black hover:text-[#2C35A5]">
+            <Link href="/" className="block text-black hover:text-[#2C35A5]">
               Home
-            </a>
-            <a href="/about" className="block text-black hover:text-[#2C35A5]">
+            </Link>
+            <Link
+              href="/about"
+              className="block text-black hover:text-[#2C35A5]"
+            >
               About
-            </a>
+            </Link>
             {/* <a
               href="/services"
               className="block text-black hover:text-[#2C35A5]"
@@ -277,207 +169,64 @@ export default function Navbar() {
               {isMobileServicesOpen && (
                 <div className="ml-4 mt-2 space-y-2 text-sm max-h-[500px] overflow-y-auto pr-2">
                   {/* Category Item */}
-                  <div className={categoryBoxStyle}>
-                    <button
-                      className="flex items-center justify-between font-semibold w-full text-left"
-                      onClick={() => toggleCategory("development")}
-                    >
-                      <span> 🛠️ Development </span> 
-                      {openCategories['development'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                    </button>
-                    {openCategories["development"] && (
-                      <ul className="ml-2 text-gray-700">
-                        <li>
-                          <a href="/services/PHP">PHP & Frameworks</a>
-                        </li>
-                        <li>
-                          <a href="/services/cross-app">
-                            Cross-App Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/dotnet">.NET & Frameworks</a>
-                        </li>
-                        <li>
-                          <a href="/services/cms">CMS Development</a>
-                        </li>
-                        <li>
-                          <a href="/services/frontend">Frontend Development</a>
-                        </li>
-                        <li>
-                          <a href="/services/database">Database Management</a>
-                        </li>
-                        <li>
-                          <a href="/services/python-django">Python & Django</a>
-                        </li>
-                        <li>
-                          <a href="/services/mobile-app">
-                            Mobile App Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/blockchain">
-                            Blockchain Development
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/cloud">Cloud Services</a>
-                        </li>
-                        <li>
-                          <a href="/services/devops">DevOps Services</a>
-                        </li>
-                        <li>
-                          <a href="/services/api">API Development</a>
-                        </li>
-                        <li>
-                          <a href="/services/ecommerce">E-commerce Solutions</a>
-                        </li>
-                      </ul>
-                    )}
-                  </div>
-
-                  <div className={categoryBoxStyle}>
-                    <button
-                      className="font-semibold w-full text-left"
-                      onClick={() => toggleCategory("marketing")}
-                    >
-                      <span>📈 Marketing & Growth Services</span>
-                      {openCategories['marketing'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                    </button>
-                    {openCategories["marketing"] && (
-                      <ul className="ml-2 text-gray-700">
-                        <li>
-                          <a href="/services/seo">SEO Expert</a>
-                        </li>
-                        <li>
-                          <a href="/services/social-media">
-                            Social Media Management
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/linkedin">
-                            LinkedIn Account Handling
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/email-marketing">
-                            Email Marketing
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/youtube">
-                            YouTube Channel Management
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/content">Content Marketing</a>
-                        </li>
-                        <li>
-                          <a href="/services/ppc">PPC Advertising</a>
-                        </li>
-                        <li>
-                          <a href="/services/influencer">
-                            Influencer Marketing
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/analytics">
-                            Analytics & Reporting
-                          </a>
-                        </li>
-                      </ul>
-                    )}
-                  </div>
-
-                  <div className={categoryBoxStyle}>
-                    <button
-                      className="font-semibold w-full text-left"
-                      onClick={() => toggleCategory("other")}
-                    >
-                      <span> 🧩 Other Services </span>
-                      {openCategories['other'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                    </button>
-                    {openCategories["other"] && (
-                      <ul className="ml-2 text-gray-700">
-                        <li>
-                          <a href="/services/qa">QA Expert</a>
-                        </li>
-                        <li>
-                          <a href="/services/video-editing">Video Editing</a>
-                        </li>
-                        <li>
-                          <a href="/services/pwa">Progressive Web App</a>
-                        </li>
-                        <li>
-                          <a href="/services/chatbot">Chatbot Development</a>
-                        </li>
-                        <li>
-                          <a href="/services/crm-erp">
-                            Custom CRM/ERP Solutions
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/cybersecurity">
-                            Cybersecurity Services
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/data-migration">
-                            Data Migration & Integration
-                          </a>
-                        </li>
-                      </ul>
-                    )}
-                  </div>
-
-                  <div className={categoryBoxStyle}>
-                    <button
-                      className="font-semibold w-full text-left"
-                      onClick={() => toggleCategory("design")}
-                    >
-                      <span>🎨 Design & Creative Services</span>
-                      {openCategories['design'] ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
-                    </button>
-                    {openCategories["design"] && (
-                      <ul className="ml-2 text-gray-700">
-                        <li>
-                          <a href="/services/ui-ux">UI/UX Design</a>
-                        </li>
-                        <li>
-                          <a href="/services/branding">
-                            Branding and Graphic Design
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/services/animation">
-                            Animation & Motion Graphics
-                          </a>
-                        </li>
-                      </ul>
-                    )}
-                  </div>
+                  {menuItems?.map((item, index) => (
+                    <div className={categoryBoxStyle} key={index}>
+                      <button
+                        className="flex items-center justify-between font-semibold w-full text-left"
+                        onClick={() => toggleCategory(item?.title)}
+                      >
+                        <span> {item?.title} </span>
+                        {openCategories[item?.title] ? (
+                          <ChevronUp size={18} />
+                        ) : (
+                          <ChevronDown size={18} />
+                        )}
+                      </button>
+                      {openCategories[item?.title] && (
+                        <ul className="ml-2 text-gray-700">
+                          {item?.subMenu?.map((subItem, subIndex) => (
+                            <li key={subIndex}>
+                              <a
+                                href={subItem?.link}
+                                className="flex items-center gap-2"
+                              >
+                                {subItem?.icon}
+                                {subItem?.title}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
+                  ))}
                 </div>
               )}
             </div>
 
-            <a href="/blog" className="block text-black hover:text-[#2C35A5]">
+            <Link
+              href="/blog"
+              className="block text-black hover:text-[#2C35A5]"
+            >
               Blogs
-            </a>
-            <a
+            </Link>
+            <Link
               href="/portfolio"
               className="block text-black hover:text-[#2C35A5]"
             >
               Results
-            </a>
-            <a href="/career" className="block text-black hover:text-[#2C35A5]">
+            </Link>
+            <Link
+              href="/career"
+              className="block text-black hover:text-[#2C35A5]"
+            >
               Career
-            </a>
-            <a
+            </Link>
+            <Link
               href="/contact"
               className="block text-black hover:text-[#2C35A5]"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
         </div>
       )}
