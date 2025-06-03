@@ -5,6 +5,9 @@ import './globals.css';
 export const metadata = {
   title: 'MarkefyHub',
   description: 'Grow your business with expert marketing solutions.',
+  icons: {
+    icon: "/favicon.jpg",
+  }
 };
 
 export default function RootLayout({ children }) {

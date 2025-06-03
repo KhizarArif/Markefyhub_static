@@ -38,12 +38,12 @@ export default function Navbar() {
 
       {/* Nav Links */}
       <div className="space-x-6 hidden md:flex relative items-center">
-        <a
+        <Link
           href="/"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Home
-        </a>
+        </Link>
         <a
           href="/about"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
@@ -64,7 +64,7 @@ export default function Navbar() {
             Services
           </a>
           {showServices && (
-            <div className="absolute top-full left-0 w-[800px] bg-white shadow-lg rounded-md p-6 grid grid-cols-4 gap-6 z-50 cursor-pointer">
+            <div className="absolute top-full -left-32 w-[1000px] bg-white shadow-lg rounded-md p-6 grid grid-cols-4 gap-6 z-50 cursor-pointer">
               {menuItems?.map((item, index) => (
                 <div key={index}>
                   <h3 className="font-semibold mb-2"> {item?.title} </h3>
@@ -73,7 +73,7 @@ export default function Navbar() {
                       <li key={subIndex}>
                         <Link
                           href={subItem?.link}
-                          className="flex items-center gap-2"
+                          className="flex items-center gap-3 my-3"
                         >
                           {subItem?.icon}
                           {subItem?.title}

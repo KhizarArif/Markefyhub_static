@@ -8,11 +8,11 @@ export default function Footer() {
         <div>
           <h4 className="text-xl font-semibold mb-4">MarkeyfyHub</h4>
           <p className="mb-2 text-gray-400">
-            Awamileaug Drive, Kensington
-            <br />
-            London, UK
+            <i className="fas fa-map-marker-alt mr-2 text-white" />
+            1942 Broadway St. STE 314C Boulder, CO, 80302, USA
           </p>
           <p className="mb-2 text-gray-400">
+            <i className="fas fa-map-marker-alt mr-2 text-white" />
             2nd floor house no 550 steet 11 sector C bahria town phase 8
             Rawalpindi
           </p>
