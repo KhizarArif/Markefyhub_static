@@ -1,8 +1,32 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import Feedback from "@/components/Feedback";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import { Autoplay, Pagination } from "swiper/modules";
+import MultiRowCarousel from "@/components/MultiRowCarousel";
+
 const about = () => {
+  const images = [
+    "/portfolio/1.jpg",
+    "/portfolio/2.jpg",
+    "/portfolio/3.jpg",
+    "/portfolio/design1.jpg",
+    "/portfolio/design2.jpg",
+    "/portfolio/design3.jpg",
+    "/portfolio/design4.jpg",
+    "/portfolio/design5.jpeg",
+    "/portfolio/design6.jpg",
+    "/portfolio/design7.jpeg",
+    "/portfolio/design8.jpg",
+    "/portfolio/design9.jpg",
+    "/portfolio/design10.jpg",
+    "/portfolio/design11.jpg",
+  ];
+
   return (
     <main className="flex flex-col items-center w-full">
       <section className="flex flex-col md:flex-row items-center max-w-7xl w-full px-4 py-16 mx-auto gap-10">
@@ -40,7 +64,7 @@ const about = () => {
           "/main4.png",
           "/main1.png",
           "/main2.png",
-          "/main3.png"
+          "/main3.png",
         ].map((logo, index) => (
           <div key={index} className="w-30 h-20 relative">
             <Image
@@ -58,7 +82,7 @@ const about = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F32]">
           Showcase Our Recent Work
         </h2>
-        <p className="text-gray-600 max-w-3xl mx-auto mt-6 text-sm md:text-base">
+        <p className="text-gray-600 max-w-3xl mx-auto mt-6 text-sm md:text-base mb-5">
           Recently, We Delivered Top-Notch Projects in Graphic Design, UI/UX,
           Web Development, Video Editing, And Digital Marketing. Our Work
           Showcases Creativity And Innovation, Helping Brands Enhance Their
@@ -66,47 +90,16 @@ const about = () => {
         </p>
 
         {/* Category Tabs */}
-        <div className="flex flex-wrap justify-center gap-6 mt-8 font-medium text-sm md:text-base">
+        {/* <div className="flex flex-wrap justify-center gap-6 mt-8 font-medium text-sm md:text-base">
+          <span className="hover:text-[#5751E1] cursor-pointer">All</span>
+          <span className="hover:text-[#5751E1] cursor-pointer">Website</span>
           <span className="hover:text-[#5751E1] cursor-pointer">
-            WEB DEVELOPMENT
+            Social Media
           </span>
-          <span className="hover:text-[#5751E1] cursor-pointer">
-            GRAPHIC DESIGNING
-          </span>
-          <span className="hover:text-[#5751E1] cursor-pointer">
-            UI UX DESIGN
-          </span>
-          <span className="hover:text-[#5751E1] cursor-pointer">
-            VIDEO EDITING
-          </span>
-        </div>
+        </div> */}
 
-        {/* Grid of Work Samples */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-10 mt-12 max-w-6xl mx-auto px-4">
-          {[
-            "/p1.jpg",
-            "/p1.jpg",
-            "/p2.png",
-            "/p2.png",
-            "/p1.jpg",
-            "/p1.jpg",
-            "/p2.png",
-            "/p2.png"
-          ].map((img, idx) => (
-            <div
-              key={idx}
-              className="rounded-xl overflow-hidden shadow-md w-full h-[40vh]"
-            >
-              <Image
-                src={img}
-                alt={`portfolio-${idx}`}
-                width={600}
-                height={400}
-                className="w-full h-full object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Grid of Work Samples */} 
+        <MultiRowCarousel images={images} rows={3} />
       </section>
       <Feedback />
     </main>

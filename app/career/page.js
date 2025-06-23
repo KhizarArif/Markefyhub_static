@@ -13,7 +13,7 @@ const career = () => {
                  <span className='text-blue-600'>Join</span> Our <span className='text-blue-600'>Team-Build</span> Your <br/> Future with <span className='text-blue-600'>Us</span>
                     </h1>
                     <p className="text-black leading-relaxed text-xl w-[50vw]">
-                    Whether you're looking for information, support, or partnership opportunities, we're all ears. Drop us a message and let’s start the conversation today. Together, we can make something amazing happen!
+                    Whether you&#39;re looking for information, support, or partnership opportunities, we&#39;re all ears. Drop us a message and let’s start the conversation today. Together, we can make something amazing happen!
                     </p>
                 </div>
 

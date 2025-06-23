@@ -58,7 +58,7 @@ export default function Navbar() {
           onMouseLeave={() => setShowServices(false)}
         >
           <a
-            href="/services"
+            href="javascript:void(0)"
             className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md cursor-pointer"
           >
             Services
