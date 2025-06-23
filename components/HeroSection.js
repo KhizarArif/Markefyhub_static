@@ -4,6 +4,8 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Feedback from "./Feedback";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import Link from "next/link";
+import MainPortfolio from "./MainPortfolio";
 
 const testimonials = [
   {
@@ -132,9 +134,11 @@ export default function HeroSection() {
               className="flex-1 p-4 rounded-md border border-gray-300 outline-none bg-[#E7E7E7] h-[4rem] text-[#282c4b]"
             />
 
-            <button className="bg-[#2C35A5] w-[40%] text-white px-6 py-3 rounded-md h-[4rem]">
-              Get My Free Proposal
-            </button>
+            <Link href="portfolio">
+              <button className="bg-[#2C35A5] w-[40%] text-white px-6 py-3 rounded-md h-[4rem]">
+                Get My Free Proposal
+              </button>
+            </Link>
           </div>
         </div>
 
@@ -157,8 +161,6 @@ export default function HeroSection() {
           "/main3.png",
           "/main4.png",
           "/main1.png",
-          "/main2.png",
-          "/main3.png"
         ].map((logo, index) => (
           <div key={index} className="w-30 h-20 relative">
             <Image
@@ -196,24 +198,6 @@ export default function HeroSection() {
             including SEO, PPC ads, Amazon store optimization, copywriting, CRO,
             and more.
           </p>
-
-          <div className="grid grid-cols-2 gap-4 text-sm">
-            {[
-              "Innovative Digital Solutions",
-              "Expert Development Team",
-              "Strategic Marketing Approach",
-              "24/7 Technical Support",
-              "Data-Driven Results",
-              "Advanced Security Protocols"
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="flex items-center gap-2 text-[#061E42] font-bold"
-              >
-                ✅ {item}
-              </div>
-            ))}
-          </div>
           <button className="mt-6 bg-[#2C35A5] text-white py-3 px-6 rounded-md">
             Request A Quote
           </button>
@@ -241,9 +225,11 @@ export default function HeroSection() {
                 </p>
               </div>
 
-              <button className="bg-[#2C35A5] text-white w-[46%] px-6 py-3 rounded-3xl h-[4rem]">
-                See All Services
-              </button>
+              <Link href="/services">
+                <button className="bg-[#2C35A5] text-white w-[46%] px-6 py-3 rounded-3xl h-[4rem]">
+                  See All Services
+                </button>
+              </Link>
             </div>
           </div>
 
@@ -327,7 +313,7 @@ export default function HeroSection() {
             </button>
           </div>
 
-          <div className="relative">
+          {/* <div className="relative">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {items
                 .slice(currentIndex, currentIndex + visibleCards)
@@ -362,9 +348,9 @@ export default function HeroSection() {
             >
               <i className="fas fa-chevron-right text-[#2C35A5]"></i>
             </button>
-          </div>
+          </div> */}
 
-          <div className="flex justify-center space-x-2 mt-4">
+          {/* <div className="flex justify-center space-x-2 mt-4">
             {Array(Math.ceil(items.length / visibleCards))
               .fill(0)
               .map((_, i) => (
@@ -377,7 +363,9 @@ export default function HeroSection() {
                   }`}
                 ></div>
               ))}
-          </div>
+          </div> */}
+
+          <MainPortfolio />
         </div>
       </section>
 
@@ -508,9 +496,11 @@ export default function HeroSection() {
       <section className="w-[100%] py-20 bg-cover px-3 bg-center text-white relative mt-3">
         <div className="flex items-center justify-between mb-10">
           <h2 className="text-3xl font-bold text-black">Our Features Jobs</h2>
-          <button className="bg-[#2C35A5] text-black text-sm font-medium px-6 py-2 rounded-full hover:bg-blue-700 transition">
-            View All →
-          </button>
+          <Link href="career">
+            <button className="bg-[#2C35A5] text-white text-sm font-medium px-6 py-2 rounded-full hover:bg-blue-700 transition">
+              View All →
+            </button>
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -536,15 +526,17 @@ export default function HeroSection() {
                 {job.salary}
               </p>
 
-              <button
-                className={`w-full py-2 text-sm font-medium rounded-full border ${
-                  job.filled
-                    ? "bg-[#2C35A5] text-white"
-                    : "text-black border-gray-300"
-                }`}
-              >
-                Apply Now
-              </button>
+              <Link href="/career">
+                <button
+                  className={`w-full py-2 text-sm font-medium rounded-full border ${
+                    job.filled
+                      ? "bg-[#2C35A5] text-white"
+                      : "text-black border-gray-300"
+                  }`}
+                >
+                  Apply Now
+                </button>
+              </Link>
             </div>
           ))}
         </div>

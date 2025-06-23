@@ -5,6 +5,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { menuItems } from "@/dummyData/menu";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar() {
   const [showServices, setShowServices] = useState(false);
@@ -24,7 +25,7 @@ export default function Navbar() {
 
   return (
     <nav className="relative flex w-full justify-between items-center py-4 px-8 shadow-md bg-white z-50">
-      <img src="/logo.png" width={150} height={150} />
+      <Image src="/logo.png" width={250} height={200} alt="logo" />
 
       {/* Hamburger menu icon (only visible on mobile) */}
       <button
@@ -68,7 +69,7 @@ export default function Navbar() {
               {menuItems?.map((item, index) => (
                 <div key={index}>
                   <h3 className="font-semibold mb-2"> {item?.title} </h3>
-                  <ul className="space-y-1 text-sm text-gray-700">
+                  <ul className="space-y-1 text-xs text-gray-700">
                     {item?.subMenu?.map((subItem, subIndex) => (
                       <li key={subIndex}>
                         <Link
@@ -106,7 +107,7 @@ export default function Navbar() {
           Career
         </Link>
         <Link
-          href="/contact"
+          href="contact"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Contact Us

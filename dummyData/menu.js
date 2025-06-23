@@ -166,6 +166,11 @@ export const menuItems = [
         link: "/services/ui-ux-design"
       },
       {
+        title: "Video Editing",
+        icon: <Film size={20} />,
+        link: "/services/video-editing"
+      },
+      {
         title: "Branding & Graphic Design",
         icon: <Brush size={20} />,
         link: "/services/branding-design"
@@ -186,11 +191,6 @@ export const menuItems = [
         title: "QA Experts",
         icon: <CheckSquare size={20} />,
         link: "/services/qa-experts"
-      },
-      {
-        title: "Video Editing",
-        icon: <Film size={20} />,
-        link: "/services/video-editing"
       },
       {
         title: "Progressive Web Apps",

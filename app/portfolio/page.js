@@ -3,30 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import Feedback from "@/components/Feedback";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import { Autoplay, Pagination } from "swiper/modules";
-import MultiRowCarousel from "@/components/MultiRowCarousel";
+import Feedback from "@/components/Feedback"; 
+import "swiper/css"; 
+import MainPortfolio from "./../../components/MainPortfolio";
 
 const about = () => {
-  const images = [
-    "/portfolio/1.jpg",
-    "/portfolio/2.jpg",
-    "/portfolio/3.jpg",
-    "/portfolio/design1.jpg",
-    "/portfolio/design2.jpg",
-    "/portfolio/design3.jpg",
-    "/portfolio/design4.jpg",
-    "/portfolio/design5.jpeg",
-    "/portfolio/design6.jpg",
-    "/portfolio/design7.jpeg",
-    "/portfolio/design8.jpg",
-    "/portfolio/design9.jpg",
-    "/portfolio/design10.jpg",
-    "/portfolio/design11.jpg",
-  ];
-
   return (
     <main className="flex flex-col items-center w-full">
       <section className="flex flex-col md:flex-row items-center max-w-7xl w-full px-4 py-16 mx-auto gap-10">
@@ -64,7 +45,7 @@ const about = () => {
           "/main4.png",
           "/main1.png",
           "/main2.png",
-          "/main3.png",
+          "/main3.png"
         ].map((logo, index) => (
           <div key={index} className="w-30 h-20 relative">
             <Image
@@ -89,17 +70,8 @@ const about = () => {
           Online Presence And Achieve Growth.
         </p>
 
-        {/* Category Tabs */}
-        {/* <div className="flex flex-wrap justify-center gap-6 mt-8 font-medium text-sm md:text-base">
-          <span className="hover:text-[#5751E1] cursor-pointer">All</span>
-          <span className="hover:text-[#5751E1] cursor-pointer">Website</span>
-          <span className="hover:text-[#5751E1] cursor-pointer">
-            Social Media
-          </span>
-        </div> */}
-
-        {/* Grid of Work Samples */} 
-        <MultiRowCarousel images={images} rows={3} />
+        {/* Grid of Work Samples */}
+        <MainPortfolio />
       </section>
       <Feedback />
     </main>
