@@ -107,7 +107,7 @@ export default function Navbar() {
           Career
         </Link>
         <Link
-          href="contact"
+          href="/contact"
           className="hover:bg-[#2C35A5] hover:text-white text-black px-2 py-2 rounded-md"
         >
           Contact Us

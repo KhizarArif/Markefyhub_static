@@ -91,10 +91,7 @@ export default function HeroSection() {
           "/main1.png",
           "/main2.png",
           "/main3.png",
-          "/main4.png",
-          "/main1.png",
-          "/main2.png",
-          "/main3.png"
+          "/main4.png", 
         ].map((logo, index) => (
           <div key={index} className="w-30 h-20 relative">
             <Image
