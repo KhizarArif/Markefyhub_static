@@ -58,7 +58,7 @@ export default function StatsSection() {
           transition={{ duration: 0.7 }}
           className="text-3xl font-bold mb-10"
         >
-          Showcase some impressive numbers.
+          What We’ve Achieved Together.
         </motion.h2>
 
         <div className="flex flex-wrap justify-center gap-16">

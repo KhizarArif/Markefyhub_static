@@ -8,7 +8,7 @@ const testimonials = [
     title: "CEO of Redbird Company",
   },
   {
-    text: "Working with Katalyst Studio has been an incredible experience...",
+    text: "Working with Markefyhub has been an incredible experience...",
     name: "Alan Baker",
     title: "CEO of Redbird Company",
   },
@@ -49,10 +49,10 @@ export default function TestimonialSection() {
   return (
     <section className="w-full py-16 bg-[#2C35A5] text-white text-center relative overflow-hidden">
       <h2 className="text-4xl font-bold mb-4">
-        Hear what our{" "}
+        Hear what our
         <span className="bg-white text-[#2C35A5] px-2 py-1 rounded">
           amazing
-        </span>{" "}
+        </span>
         customers say
       </h2>
       <p className="max-w-xl mx-auto text-lg mb-10">

@@ -219,7 +219,7 @@ const Services = () => {
             >
                 <div className="absolute inset-0 bg-[#2C35A5]/80"></div>
                 <div className="relative z-10 max-w-7xl mx-auto px-4 text-center">
-                    <h2 className="text-3xl font-bold mb-10">Showcase some impressive numbers.</h2>
+                    <h2 className="text-3xl font-bold mb-10">What We’ve Achieved Together.</h2>
                     <div className="flex flex-wrap justify-center gap-16">
                         <div>
                             <p className="text-5xl font-bold">860+</p>

@@ -20,7 +20,7 @@ const testimonials = [
     name: "Alan Baker",
     title: "CEO of Redbird Company",
     quote:
-      "Working with Katalyst Studio has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!",
+      "Working with Markefyhub has been an incredible experience. They truly listened to our needs and delivered a stunning design that exceeded our expectations. We couldn't be happier with the final product!",
   },
   {
     name: "Theresa Webb",

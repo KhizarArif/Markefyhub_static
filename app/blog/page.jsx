@@ -70,7 +70,7 @@ const blog = () => {
 
       <section className="w-full py-16 bg-white flex flex-col items-center px-4">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2937] mb-4">
-          Showcase Our Recent Blogs
+           Our Recent Blogs
         </h2>
         <p className="text-[#767676] max-w-3xl text-center text-sm sm:text-base mb-10">
           From Practical How-Tos To Powerful Success Stories, Our Blog Is Your

@@ -58,12 +58,12 @@ const about = () => {
 
       <section className="w-full bg-white py-14 px-4 text-center">
         <h2 className="text-2xl md:text-3xl font-bold text-[#2E2F32]">
-          Showcase Our Recent Work
+           Our Recent Work
         </h2>
         <p className="text-gray-600 max-w-3xl mx-auto mt-6 text-sm md:text-base mb-5">
           Recently, We Delivered Top-Notch Projects in Graphic Design, UI/UX,
           Web Development, Video Editing, And Digital Marketing. Our Work
-          Showcases Creativity And Innovation, Helping Brands Enhance Their
+           Creativity And Innovation, Helping Brands Enhance Their
           Online Presence And Achieve Growth.
         </p>
 
