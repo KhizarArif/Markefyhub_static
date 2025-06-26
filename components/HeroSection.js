@@ -79,11 +79,6 @@ const teams = [
     image: "/Video_Editor.jpg",
   },
   {
-    name: "Abdul Aleem",
-    title: "Graphic Designer",
-    image: "/Graphic_Designer.jpg",
-  },
-  {
     name: "Ahmed",
     title: "Ui and Ux Designer",
     image: "/Ui_Ux_designer.jpg",

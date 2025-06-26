@@ -189,7 +189,7 @@ export default function Navbar() {
                             <li key={subIndex}>
                               <a
                                 href={subItem?.link}
-                                className="flex items-center gap-2"
+                                className="flex items-center gap-3 my-3"
                               >
                                 {subItem?.icon}
                                 {subItem?.title}

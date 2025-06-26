@@ -5,12 +5,12 @@ import Image from "next/image";
 // Animation Variants
 const fadeLeft = {
   hidden: { opacity: 0, x: -50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
 };
 
 const fadeRight = {
   hidden: { opacity: 0, x: 50 },
-  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+  visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
 };
 
 export default function MarketingSection() {
@@ -30,7 +30,7 @@ export default function MarketingSection() {
             Effective Social Media Management Solutions
           </h2>
           <p className="text-[#6E6A74] leading-relaxed text-lg">
-            We help businesses build strong social media presence through
+            We help businesses establish a strong social media presence through
             strategic content creation, community engagement, and data-driven
             campaign management across all major platforms.
           </p>
@@ -94,9 +94,9 @@ export default function MarketingSection() {
             Transform Your Digital Presence
           </h2>
           <p className="text-[#6E6A74] leading-relaxed text-lg">
-            Our digital transformation solutions are tailored to your business
-            needs. We leverage cutting-edge technologies and proven strategies
-            to enhance your online presence.
+            Our digital transformation solutions are customized to meet your
+            business needs. We utilize cutting-edge technologies and proven
+            strategies to strengthen your online presence.
           </p>
         </motion.div>
       </div>

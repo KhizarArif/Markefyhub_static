@@ -9,9 +9,9 @@ const fadeVariant = {
     y: 0,
     transition: {
       duration: 0.6,
-      ease: "easeOut",
-    },
-  },
+      ease: "easeOut"
+    }
+  }
 };
 
 export default function WhyChooseUs() {
@@ -53,11 +53,15 @@ export default function WhyChooseUs() {
           Why Choose MarkefyHub For Your Digital Marketing Agency?
         </h2>
         <p className="text-[#6E6A74] leading-relaxed text-xl">
-          Thrive is a full-service digital marketing agency. We’ve been
-          providing a wide range of services to clients of all industries since
-          2005. Our digital marketing services include consulting and management
-          options for a variety of online marketing tactics including SEO, PPC
-          ads, Amazon store optimization, copywriting, CRO, and more.
+          At MarkefyHub Solutions, we are committed to empowering businesses in
+          the digital landscape. Our team of experienced professionals combines
+          creativity, cutting-edge technology, and strategic thinking to deliver
+          innovative digital solutions that drive measurable growth and
+          long-term success. With deep expertise in digital transformation, we
+          specialize in web development, digital marketing, UI/UX design, and
+          custom software development. Our client-centric approach ensures every
+          project is aligned with specific business objectives, delivering
+          meaningful and impactful results.
         </p>
 
         <motion.button

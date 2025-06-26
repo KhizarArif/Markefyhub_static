@@ -41,7 +41,7 @@ const Services = () => {
                         Transform Your Business <br/> Through Digital Innovation
                     </h1>
                     <p className="text-[#6E6A74] leading-relaxed text-xl">
-                        We are the top digital marketing agency for branding corp. We offer a full range of services to help clients improve their search engine rankings and drive more traffic to their websites.
+                        We are the top digital marketing agency for branding solutions. We offer a full range of services to help clients improve their search engine rankings and drive more traffic to their websites.
                     </p>
                     <div className="flex flex-col gap-4 mt-4">
                         <button className="bg-[#2C35A5] w-[42%] text-white px-6 py-3 rounded-md h-[4rem]">
@@ -180,7 +180,7 @@ const Services = () => {
                         <div className='flex flex-col gap-3'>
                             <div className="max-w-4xl w-full px-4 md:px-0">
                                 <p className="text-[#6E6A74] text-xl text-left mt-4 leading-relaxed">
-                                    We are the top digital marketing agency for branding corp. We offer a full range of services to help clients improve their search engine rankings and drive more traffic to their websites.
+                                    We are the top digital marketing agency for branding solutions. We offer a full range of services to help clients improve their search engine rankings and drive more traffic to their websites.
                                 </p>
                             </div>
 
@@ -206,7 +206,7 @@ const Services = () => {
                                 <Image src={service.icon} alt={service.title} width={80} height={150} className="object-contain" />
                                 <h3 className="text-xl font-semibold mt-8">{service.title}</h3>
                                 <p className="text-gray-600 mt-4 text-sm leading-relaxed">
-                                    We are the top digital marketing agency for branding corp.
+                                    We are the top digital marketing agency for branding solutions.
                                 </p>
                             </div>
                         ))}

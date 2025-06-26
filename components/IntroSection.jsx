@@ -5,20 +5,19 @@ const textStagger = {
   hidden: {},
   show: {
     transition: {
-      staggerChildren: 0.2,
-    },
-  },
+      staggerChildren: 0.2
+    }
+  }
 };
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
-  show: { opacity: 1, y: 0 },
+  show: { opacity: 1, y: 0 }
 };
 
 export default function IntroSection() {
   return (
     <section className="flex flex-col md:flex-row items-center max-w-7xl w-full px-4 py-16 mx-auto gap-10">
-      
       {/* Left Text Area with stagger */}
       <motion.div
         className="flex-1 space-y-6"
@@ -38,9 +37,10 @@ export default function IntroSection() {
           className="text-[#6E6A74] leading-relaxed text-xl"
           variants={fadeUp}
         >
-          Our digital marketing services include consulting and management
-          options for a variety of online marketing tactics including SEO, PPC
-          ads, Amazon store optimization, copywriting, CRO, and more.
+          Our digital marketing services encompass consulting and management
+          across a wide range of online strategies, including SEO, PPC
+          advertising, Amazon store optimization, copywriting, conversion rate
+          optimization (CRO), and more.
         </motion.p>
 
         <motion.div className="flex flex-col gap-4 mt-4" variants={fadeUp}>

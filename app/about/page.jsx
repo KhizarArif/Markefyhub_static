@@ -69,9 +69,10 @@ export default function HeroSection() {
             We Help to Grow Your Business With our Expert Marketing Solutions
           </h1>
           <p className="text-[#6E6A74] leading-relaxed text-xl">
-            Our digital marketing services include consulting and management
-            options for a variety of online marketing tactics including SEO, PPC
-            ads, Amazon store optimization, copywriting, CRO, and more.
+            Our digital marketing services encompass consulting and management
+            across a range of online marketing strategies, including SEO, PPC
+            advertising, Amazon store optimization, copywriting, conversion rate
+            optimization (CRO), and more.
           </p>
         </div>
 
@@ -87,22 +88,19 @@ export default function HeroSection() {
       </section>
 
       <section className="w-full flex flex-wrap justify-center items-center gap-10 py-10 px-4 bg-[#EBF1F9]">
-        {[
-          "/main1.png",
-          "/main2.png",
-          "/main3.png",
-          "/main4.png", 
-        ].map((logo, index) => (
-          <div key={index} className="w-30 h-20 relative">
-            <Image
-              src={logo}
-              alt={`logo-${index}`}
-              width={150}
-              height={150}
-              className="object-contain"
-            />
-          </div>
-        ))}
+        {["/main1.png", "/main2.png", "/main3.png", "/main4.png"].map(
+          (logo, index) => (
+            <div key={index} className="w-30 h-20 relative">
+              <Image
+                src={logo}
+                alt={`logo-${index}`}
+                width={150}
+                height={150}
+                className="object-contain"
+              />
+            </div>
+          )
+        )}
       </section>
 
       <section className="w-full py-16 ">
@@ -122,8 +120,9 @@ export default function HeroSection() {
             </h2>
             <p className="text-[#6E6A74] leading-relaxed text-lg">
               With over a decade of experience in digital innovation, we have
-              helped hundreds of businesses transform their digital presence and
-              achieve remarkable growth through cutting-edge solutions.
+              empowered hundreds of businesses to transform their digital
+              presence and achieve significant growth through cutting-edge
+              solutions.
             </p>
             <button className="bg-[#2C35A5] text-white px-6 py-3 rounded-md mt-4">
               Learn More
@@ -164,15 +163,15 @@ export default function HeroSection() {
             Transforming Businesses Through Digital Innovation
           </h2>
           <p className="text-[#6E6A74] leading-relaxed text-xl">
-            At MarkefyHub Solutions, we are passionate about helping businesses
-            thrive in the digital landscape. Our team of experts combines
-            creativity, technology, and strategy to deliver exceptional digital
-            solutions that drive growth and success for our clients. With years
-            of experience in digital transformation, we specialize in web
+            At MarkefyHub Solutions, we are committed to empowering businesses
+            in the digital landscape. Our team of seasoned professionals
+            integrates creativity, technology, and strategic insight to deliver
+            innovative digital solutions that drive growth and success. With
+            extensive expertise in digital transformation, we specialize in web
             development, digital marketing, UI/UX design, and custom software
-            solutions. Our client-centric approach ensures that every project we
-            undertake is tailored to meet specific business objectives while
-            delivering measurable results.
+            development. Our client-centric approach ensures every project
+            aligns strategically with our clients' unique business goals,
+            delivering tangible and measurable results.
           </p>
 
           <div className="grid grid-cols-2 gap-4 text-sm">
@@ -188,7 +187,7 @@ export default function HeroSection() {
                 key={idx}
                 className="flex items-center gap-2 text-[#061E42] font-bold"
               >
-                ✅ {item}
+                ✔ {item}
               </div>
             ))}
           </div>

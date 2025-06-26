@@ -12,8 +12,9 @@ const Feedback = () => {
             <span className="text-[#2C35A5]">Get in touch!</span>
           </h2>
           <p className="text-gray-700 mb-6">
-            We are a dynamic team of creative minds and strategic thinkers,
-            dedicated to helping businesses thrive in the digital landscape.
+            We are a dynamic team of creative professionals and strategic
+            thinkers dedicated to empowering businesses in the digital
+            landscape.
           </p>
 
           <div className="flex gap-4">

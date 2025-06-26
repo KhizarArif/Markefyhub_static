@@ -1,21 +1,21 @@
-'use client';
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import Link from "next/link";
 
 // Variants for scroll animation
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
 };
 
 const container = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.2,
-    },
-  },
+      staggerChildren: 0.2
+    }
+  }
 };
 
 export default function HomePageService() {
@@ -36,7 +36,10 @@ export default function HomePageService() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.div className="max-w-4xl w-full px-4 md:px-0" variants={fadeUp}>
+          <motion.div
+            className="max-w-4xl w-full px-4 md:px-0"
+            variants={fadeUp}
+          >
             <h2 className="text-3xl font-bold text-[#282C4B] leading-snug text-left">
               Our Expert Services <br />
               That Grow Traffic & Increase <br />
@@ -47,10 +50,10 @@ export default function HomePageService() {
           <motion.div className="flex flex-col gap-3" variants={fadeUp}>
             <div className="max-w-4xl w-full px-4 md:px-0">
               <p className="text-[#6E6A74] text-xl text-left mt-4 leading-relaxed">
-                We are the top digital marketing agency for branding corp. We
-                offer a full range of services to help clients improve their
-                search engine rankings and drive more traffic to their
-                websites.
+                We are the leading digital marketing agency for Branding
+                Solution, providing a comprehensive range of services aimed at
+                improving search engine rankings and driving high-quality
+                traffic to client websites.
               </p>
             </div>
 
@@ -77,9 +80,9 @@ export default function HomePageService() {
           viewport={{ once: true }}
         >
           {[
-            { icon: '/home3.png', title: 'Content Strategy' },
-            { icon: '/home4.png', title: 'App Development' },
-            { icon: '/home5.png', title: 'Web Development' },
+            { icon: "/home3.png", title: "Content Strategy" },
+            { icon: "/home4.png", title: "App Development" },
+            { icon: "/home5.png", title: "Web Development" }
           ].map((service, idx) => (
             <motion.div
               key={idx}
@@ -95,7 +98,7 @@ export default function HomePageService() {
               />
               <h3 className="text-xl font-semibold mt-8">{service.title}</h3>
               <p className="text-gray-600 mt-4 text-sm leading-relaxed">
-                We are the top digital marketing agency for branding corp.
+                We are the top digital marketing agency for branding solutions.
               </p>
             </motion.div>
           ))}

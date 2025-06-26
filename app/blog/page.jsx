@@ -11,18 +11,18 @@ const blog = () => {
   // const [blogs, setBlogs] = useState([]);
 
   const blogs = [
-      {
-          title: 'Fundamental Of Javascript Mode Toggle With CSS',
-          image: '/b1.png',
-      },
-      {
-          title: 'Grid CSS Make Your Life Easier Mode Toggle With CSS',
-          image: '/b2.png',
-      },
-      {
-          title: 'Make Animated Light Mode And Dark Mode Toggle With CSS',
-          image: '/b3.png',
-      },
+    {
+      title: "Fundamental Of Javascript Mode Toggle With CSS",
+      image: "/b1.png"
+    },
+    {
+      title: "Grid CSS Make Your Life Easier Mode Toggle With CSS",
+      image: "/b2.png"
+    },
+    {
+      title: "Make Animated Light Mode And Dark Mode Toggle With CSS",
+      image: "/b3.png"
+    }
   ];
 
   // useEffect(() => {
@@ -45,16 +45,16 @@ const blog = () => {
       <section className="flex flex-col md:flex-row items-center max-w-7xl w-full px-4 py-16 mx-auto gap-10">
         <div className="flex-1 space-y-6 max-w-[450px]">
           <h1 className="text-4xl w-[50vw] font-bold leading-tight text-[#282C4B]">
-            Explore <span className="text-blue-600">Inspiring</span> Stories &{" "}
-            <br /> <span className="text-blue-600">Smart</span> Tips on Our{" "}
+            Explore <span className="text-blue-600">Inspiring</span> Stories &
+            <br /> <span className="text-blue-600">Smart</span> Tips on Our
             <span className="text-blue-600">Blog!</span>
           </h1>
           <p className="text-black leading-relaxed text-xl w-[50vw]">
-            Dive into a world of creativity, ideas, and expert insights with our
-            blog section! Whether you&apos;re looking for helpful tips, the latest
-            trends, or motivational stories, we&apos;ve got something for everyone.
-            Stay informed, get inspired, and grow with every post. Start reading
-            now and unlock endless possibilities!
+            Discover a world of creativity, insights, and fresh ideas in our
+            blog. Whether you’re looking for practical tips, the latest trends,
+            or inspiring stories, there is something for everyone. Stay
+            informed, get inspired, and grow with every post. Begin reading
+            today and unlock endless possibilities.
           </p>
         </div>
         <div className="ml-[30%] flex justify-center">
@@ -70,13 +70,13 @@ const blog = () => {
 
       <section className="w-full py-16 bg-white flex flex-col items-center px-4">
         <h2 className="text-3xl sm:text-4xl font-bold text-center text-[#1f2937] mb-4">
-           Our Recent Blogs
+          Our Recent Blogs
         </h2>
         <p className="text-[#767676] max-w-3xl text-center text-sm sm:text-base mb-10">
-          From Practical How-Tos To Powerful Success Stories, Our Blog Is Your
-          Go-To Place For Valuable Content. We Bring You Fresh Perspectives,
-          Expert Advice, And Ideas That Spark Inspiration. Join Our Community Of
-          Curious Minds And Explore New Possibilities Today!
+          From practical how-tos to powerful success stories, our blog is your
+          go-to source for valuable content. We offer fresh perspectives, expert
+          advice, and inspiring ideas to fuel your growth. Join our community of
+          curious minds and start exploring new possibilities today.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl w-full p-3">

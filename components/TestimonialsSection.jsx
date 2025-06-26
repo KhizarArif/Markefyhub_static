@@ -5,18 +5,18 @@ const testimonials = [
   {
     text: "From start to finish, working with this team was a seamless experience...",
     name: "Theresa Webb",
-    title: "CEO of Redbird Company",
+    title: "CEO of Redbird Company"
   },
   {
     text: "Working with Markefyhub has been an incredible experience...",
     name: "Alan Baker",
-    title: "CEO of Redbird Company",
+    title: "CEO of Redbird Company"
   },
   {
     text: "Their team delivered on time and within budget...",
     name: "Michael Smith",
-    title: "CTO of Redbird Company",
-  },
+    title: "CTO of Redbird Company"
+  }
 ];
 
 export default function TestimonialSection() {
@@ -34,31 +34,25 @@ export default function TestimonialSection() {
   const cardVariants = {
     left: {
       hidden: { opacity: 0, x: -100 },
-      visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
     },
     middle: {
       hidden: { opacity: 0, y: -100 },
-      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+      visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
     },
     right: {
       hidden: { opacity: 0, x: 100 },
-      visible: { opacity: 1, x: 0, transition: { duration: 0.6 } },
-    },
+      visible: { opacity: 1, x: 0, transition: { duration: 0.6 } }
+    }
   };
 
   return (
     <section className="w-full py-16 bg-[#2C35A5] text-white text-center relative overflow-hidden">
-      <h2 className="text-4xl font-bold mb-4">
-        Hear what our
-        <span className="bg-white text-[#2C35A5] px-2 py-1 rounded">
-          amazing
-        </span>
-        customers say
-      </h2>
+      <h2 className="text-4xl font-bold mb-4">What our clients are saying.</h2>
       <p className="max-w-xl mx-auto text-lg mb-10">
-        Read through our testimonials to see why our clients love working with
-        us and how we can help you achieve your business goals through creative
-        and effective design.
+        Explore our testimonials to discover why clients value partnering with
+        us and how our creative, results-driven design solutions can help you
+        achieve your business goals.
       </p>
 
       <div className="flex justify-center gap-6 px-4">

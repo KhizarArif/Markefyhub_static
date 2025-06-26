@@ -10,7 +10,7 @@ const contact = () => {
           <h1 className="text-4xl w-[50vw] font-bold leading-tight text-[#282C4B]">
             <span className="text-blue-600">Contact</span> Us{" "}
             <span className="text-blue-600">Today</span> - We&apos;re Here{" "}
-            <br /> to <span className="text-blue-600">Help</span> with Your{" "}
+            <br /> to <span className="text-blue-600">Help</span> with all Your{" "}
             <span className="text-blue-600">Needs!</span>
           </h1>
           <p className="text-black leading-relaxed text-xl w-[50vw]">
@@ -165,8 +165,9 @@ const contact = () => {
             Ready to evaluate
           </h2>
           <p className="text-sm md:text-base max-w-xl mx-auto mb-6">
-            Are you an influencer ready to launch your own merch? Partner with
-            Symbol Me and start turning your audience into a thriving brand!
+            Are you an influencer ready to launch your own merchandise? Partner
+            with Markefyhub and begin transforming your audience into a thriving
+            brand!
           </p>
           <button className="bg-white text-black font-semibold px-6 py-3 rounded-md shadow-md hover:shadow-lg transition">
             Contact Us Now
